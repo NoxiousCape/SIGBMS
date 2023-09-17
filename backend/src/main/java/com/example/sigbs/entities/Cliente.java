@@ -32,8 +32,18 @@ private static final long serialVersionUID = 1L;
     @Column (name= "password")
     private String password;
 
+    @Column(name = "rol")
+    private String rol;
     public Cliente() {
 
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
     public int getIdCliente() {
