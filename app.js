@@ -11,15 +11,27 @@ sign_in_btn.addEventListener("click", () => {
     container.classList.remove("sign-up-mode");
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('loginForm');
     const resultDiv = document.getElementById('result');
 
-    loginForm.addEventListener('submit', async function(event) {
+    loginForm.addEventListener('submit', async function (event) {
         event.preventDefault();
 
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
+
+        // Verifica si el nombre de usuario es alfanumérico con punto (.)
+        if (!/^[a-zA-Z0-9.]+$/.test(username)) {
+            resultDiv.textContent = 'Nombre de usuario no válido';
+            return;
+        }
+
+        // Verifica la seguridad de la contraseña (mínimo 8 caracteres, al menos una mayúscula, una minúscula y un número)
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(password)) {
+            resultDiv.textContent = 'Contraseña no segura';
+            return;
+        }
 
         const credentials = {
             username: username,
@@ -39,6 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (data.authenticated) {
                 resultDiv.textContent = 'Inicio de sesión exitoso';
+
+                // Verificar si hay una URL de redirección
+                if (data.redirectUrl) {
+                    // Redirigir a la URL de redirección
+                    window.location.href = data.redirectUrl;
+                }
             } else {
                 resultDiv.textContent = 'Credenciales inválidas';
             }
@@ -54,33 +72,47 @@ document.addEventListener('DOMContentLoaded', function() {
         yearRange: "1900:2023"
     });
 
-    registerForm.addEventListener('submit', async function(event) {
+    registerForm.addEventListener('submit', async function (event) {
         event.preventDefault();
-        alert("SIFUNCIONAELHPTABOTON");
+    
         const nombre = document.getElementById('Nombres').value;
         const apellido = document.getElementById('Apellidos').value;
         const usuario = document.getElementById('registerUsername').value;
         const password = document.getElementById('registerPassword').value;
         const fecha_Nacimiento = document.getElementById('fechaDeNacimiento').value;
-        
-       console.log(nombre);
-       console.log(apellido);
-       console.log(usuario);
-       console.log(password);
-       console.log(fecha_Nacimiento);
-
-
+    
+        // Verifica si el nombre de usuario es alfanumérico con punto (.)
+        if (!/^[a-zA-Z0-9.]+$/.test(usuario)) {
+            alert('Nombre de usuario no válido');
+            return; // Evita que se realice la solicitud POST
+        }
+    
+        // Verifica la seguridad de la contraseña (mínimo 8 caracteres, al menos una mayúscula, una minúscula y un número)
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(password)) {
+            alert('Contraseña no segura');
+            return; // Evita que se realice la solicitud POST
+        }
+    
+        // Verifica la fecha de nacimiento (mayor de 18 años)
+        const birthDate = new Date(fecha_Nacimiento);
+        const today = new Date();
+        const age = today.getFullYear() - birthDate.getFullYear();
+        if (age < 18) {
+            alert('Debes ser mayor de 18 años para registrarte');
+            return; // Evita que se realice la solicitud POST
+        }
+    
         const userData = {
-            nombre:nombre,
-            apellido:apellido,
-            fecha_Nacimiento:fecha_Nacimiento,
-            usuario:usuario,
-            password:password,  
+            nombre: nombre,
+            apellido: apellido,
+            fecha_Nacimiento: fecha_Nacimiento,
+            usuario: usuario,
+            password: password,
         };
     
         // Realiza la solicitud POST al backend para guardar el cliente
         fetch('http://localhost:18080/Cliente/register', {
-            method:'POST',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -102,5 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Error al registrar. Por favor, inténtalo de nuevo.');
         });
     });
+    
 
 });
