@@ -47,9 +47,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: JSON.stringify(credentials)
             });
 
-            const data = await response.json();
+            if (response.status === 401) {
+                // Autenticación fallida
+                resultDiv.textContent = 'Credenciales inválidas';
+                return;
+            }
 
-            if (data.authenticated) {
+            if (response.status === 200) {
+                // Autenticación exitosa
+                const data = await response.json();
                 resultDiv.textContent = 'Inicio de sesión exitoso';
 
                 // Verificar si hay una URL de redirección
@@ -58,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     window.location.href = data.redirectUrl;
                 }
             } else {
-                resultDiv.textContent = 'Credenciales inválidas';
+                resultDiv.textContent = 'Error al iniciar sesión';
             }
         } catch (error) {
             console.error('Error:', error);
