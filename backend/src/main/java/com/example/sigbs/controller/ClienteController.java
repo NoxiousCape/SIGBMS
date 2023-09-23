@@ -3,7 +3,6 @@ package com.example.sigbs.controller;
 import com.example.sigbs.entities.Cliente;
 import com.example.sigbs.repositories.IARepositoriCliente;
 import com.example.sigbs.services.ClienteService;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,12 +12,9 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 import java.time.LocalDate;
 import java.time.Period;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-@CrossOrigin(origins = "http://127.0.0.1:5500")
 @RestController
 @RequestMapping("/Cliente")
 public class ClienteController {
@@ -64,18 +60,15 @@ public class ClienteController {
         errorResponse.put("authenticated", false);
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorResponse);
     }
-
     @PostMapping("/saveCliente")
     public Cliente saveCliente(@RequestBody Cliente cliente) {
         System.out.println("id_cliente recibido en el backend: " + cliente.getIdCliente());
         return clienteService.saveCliente(cliente);
     }
-
     @GetMapping("/listClientes")
     public List<Cliente> listClientes() {
         return clienteService.listClientes();
     }
-
     @GetMapping("/checkUniqueness/{idCliente}")
     public ResponseEntity<Map<String, Boolean>> checkIdUniqueness(@PathVariable Long idCliente) {
         boolean isUnique = !clienteService.existsByIdCliente(idCliente);
@@ -85,7 +78,6 @@ public class ClienteController {
 
         return ResponseEntity.ok(response);
     }
-
     @PostMapping("/register")
     public ResponseEntity<Map<String, String>> registerUser(@RequestBody Cliente userData) {
         try {
