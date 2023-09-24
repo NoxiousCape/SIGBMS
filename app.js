@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         try {
-            const response = await fetch('http://localhost:18080/Cliente/authenticate', {
+            const response = await fetch('https://sigbsdeployment.azurewebsites.net/Cliente/authenticate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
     
         // Realiza la solicitud POST al backend para guardar el cliente
-        fetch('http://localhost:18080/Cliente/register', {
+        fetch('', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
