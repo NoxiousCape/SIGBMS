@@ -1,3 +1,5 @@
+//Puedes basarte en este css para hacer el de esta pagina 
+/*
 body {
     background-color: #1b1b3f;
     color: rgb(251, 247, 247);
@@ -8,7 +10,7 @@ p {
     margin-bottom: 20px;
 }
 
-/*Nombre principal*/
+
 h1 {
     font-family: 'Crete Round', serif;
     font-weight: bold;
@@ -69,11 +71,11 @@ small {
     padding: 0 10px;
     width: 940px;
 }
-/*TODO seccion cabecera*/
+
 header {
     height: 70px;
 }
-/*para cambiar la posicion de los titulos*/
+
 header h1 {
     float: left;
     margin-top: 15px;
@@ -97,11 +99,11 @@ header nav ul li a {
     margin-right: 20px;
 }
 header img {
-    max-width: 100%; /* Hacer que la imagen sea responsive (ancho máximo del 100%) */
-    height: auto; /* Mantener la proporción de la imagen */
+    max-width: 100%; 
+    height: auto;
 }
 
-/*TODO seccion imagen*/
+
 #hero-image {
     height: 680px;
     padding-top: 1px;
@@ -128,7 +130,7 @@ header img {
     color: #fff;
 }
 
-/*TODO Seccion features*/
+
 #features ul {
     margin: 90px 0;
 }
@@ -192,7 +194,7 @@ header img {
     height: 80px;
 }
 
-/*TODO Contenid primario*/
+
 #primary-content {
     background-color: #282868 ;
     padding: 60px 0;
@@ -209,7 +211,6 @@ header img {
     margin: 20px 0;
 }
 
-/*TODO Contenido secundario*/
 #secondary-content {
     padding: 60px 0;
     text-align: center;
@@ -244,7 +245,7 @@ article h4 {
     color: #fff;
 }
 
-/*TODO Call To Action*/
+
 #cta {
     padding: 60px 0;
     text-align: center;
@@ -272,7 +273,7 @@ article h4 {
     color: #fff;
 }
 
-/*TODO pie de pagina*/
+
 footer {
     padding: 60px 0;
     background-color: #282868;
@@ -294,3 +295,223 @@ footer {
 #footer-links ul li {
     margin: 10px 0;
 }
+*/ 
+
+body {
+    background-color: #1b1b3f;
+    color: rgb(251, 247, 247);
+    font: normal 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+.app-title {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-lg-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.tile {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+//Basado en este css anterio, puedes hacer uno mejorando el de abajo ?
+
+/* 
+header {
+    background-color: #1b1b3f;
+    color: #ffff;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+
+.btn-primary {
+    background-color: #02b8dd;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #01789d;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.thead-dark {
+    background-color: #333;
+    color: #fff;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background-color: #02b8dd;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    text-align: right;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+#btnAccion {
+    background-color: #02b8dd;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#btnAccion:hover {
+    background-color: #01789d;
+}
+
+.btn-danger {
+    background-color: #ff3b3b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #ff0000;
+}
+
+
+footer a {
+    color: #02b8dd;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}*/
