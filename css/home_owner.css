@@ -7,6 +7,7 @@ p {
     line-height: 20px;
     margin-bottom: 20px;
 }
+
 /*Nombre principal*/
 h1 {
     font-family: 'Crete Round', serif;
@@ -94,6 +95,10 @@ header nav ul li a {
     font-weight: bold;
     display: block;
     margin-right: 20px;
+}
+header img {
+    max-width: 100%; /* Hacer que la imagen sea responsive (ancho máximo del 100%) */
+    height: auto; /* Mantener la proporción de la imagen */
 }
 
 /*TODO seccion imagen*/
