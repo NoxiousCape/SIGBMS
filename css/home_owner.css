@@ -160,6 +160,33 @@ header nav ul li a {
     height: 80px;
 }
 
+#features ul li.feature-4 {
+    background: url('../img/portada1.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+    left: 0%;
+    flex-flow: row;
+    height: 80px;
+}
+
+#features ul li.feature-5 {
+    background: url('../img/portada4.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+    left: 0%;
+    flex-flow: row;
+    height: 80px;
+}
+
+#features ul li.feature-6 {
+    background: url('../img/portada5.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+    left: 0%;
+    flex-flow: row;
+    height: 80px;
+}
+
 /*TODO Contenid primario*/
 #primary-content {
     background-color: #282868 ;
