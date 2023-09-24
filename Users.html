@@ -87,11 +87,35 @@
                 <div class="modal-body">
                     <form id="frmPermisos">
                         <!-- Aquí puedes agregar los elementos del formulario para asignar permisos -->
+                        <button id="ver-libro-btn" class="btn btn-primary" type="button">Ver Libro</button>
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <!-- Aquí puedes incluir otros elementos HTML y scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const verLibroBtn = document.getElementById('ver-libro-btn');
+
+            verLibroBtn.addEventListener('click', async function () {
+                // Realiza una solicitud GET al endpoint deseado
+                const nombreLibro = "MEJORARELAIM";
+                const response = await fetch(`http://localhost:18080/libros/mostrar/${nombreLibro}`);
+
+                if (response.status === 200) {
+                    // Si la solicitud es exitosa, obtén el enlace de respuesta
+                    const enlaceLibro = await response.text();
+
+                    // Abre una nueva ventana o pestaña del navegador con el enlace
+                    window.open(enlaceLibro, '_blank');
+                } else {
+                    // Maneja errores si es necesario
+                    console.error('Error al obtener el enlace del libro.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

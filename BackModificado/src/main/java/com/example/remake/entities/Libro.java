@@ -6,18 +6,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Libro {
     @Id
-    private String isbn;
+    private String _id;
     private String titulo;
     private String autor;
     private String descripcion;
     private String archivoPDF;
 
-    public String getIsbn() {
-        return isbn;
+
+    public String get_id() {
+        return _id;
     }
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getTitulo() {

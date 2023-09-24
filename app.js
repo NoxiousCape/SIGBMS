@@ -140,6 +140,6 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Error al registrar. Por favor, inténtalo de nuevo.');
         });
     });
-    
-
 });
+
+

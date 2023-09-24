@@ -2,9 +2,12 @@ package com.example.remake.controller;
 
 import com.example.remake.entities.Libro;
 import com.example.remake.repositories.LibroRepository;
+import com.example.remake.services.LibroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/libros")
@@ -13,20 +16,33 @@ public class LibroController {
     @Autowired
     private LibroRepository libroRepository; // Un repositorio de Spring Data MongoDB
 
-    @PostMapping("/cargar")
-    public Libro cargarLibro(@RequestBody Libro libro) {
-        // Aquí debes implementar la lógica para cargar el PDF y guardar la información en MongoDB
-        // Guarda la ruta o identificador del archivo PDF en el campo "archivoPDF" de la entidad "Libro"
-        return libroRepository.save(libro);
+    @Autowired
+    private LibroService libroService;
+    @PostMapping("/guardar")
+    public Libro guardarLibro(@RequestBody Libro libro) {
+        return libroService.guardarLibro(libro);
+    }
+    @GetMapping("/mostrar/{nombre}")
+    public ResponseEntity<String> mostrarLibroPorNombre(@PathVariable String nombre) {
+        // Consulta la entidad "Libro" por nombre
+        System.out.println("Nombre recibido en mostrarLibroPorNombre: " + nombre);
+
+        // Realiza una consulta a la base de datos para encontrar el libro por nombre
+        Optional<Libro> libroOptional = libroService.buscarLibroPorTitulo(nombre);
+
+        if (libroOptional.isPresent()) {
+            Libro libro = libroOptional.get();
+            System.out.println("Encontró el libro");
+            // Obtén el enlace al libro desde el campo "archivoPDF"
+            String enlaceLibro = libro.getArchivoPDF();
+
+            // Devuelve el enlace como respuesta HTTP
+            return ResponseEntity.ok(enlaceLibro);
+        } else {
+            System.out.println("No encontró el libro");
+            // El libro no se encontró, puedes manejar el error de acuerdo a tus necesidades
+            return ResponseEntity.notFound().build();
+        }
     }
 
-//    @GetMapping("/{id}/mostrar")
-//    public ResponseEntity<byte[]> mostrarLibro(@PathVariable String id) {
-//        // Aquí debes implementar la lógica para recuperar y mostrar el PDF del libro
-//        // Consulta la entidad "Libro" por ID y obtén la ruta o identificador del archivo PDF
-//        // Lee el archivo PDF y devuelve su contenido en la respuesta HTTP
-//        // Asegúrate de configurar el encabezado adecuado para indicar que es un archivo PDF
-//        // También maneja errores si el libro no se encuentra o el archivo no existe
-//
-//    }
 }
