@@ -1,7 +1,7 @@
     .slide {
         position: relative;
         box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
-        margin-top: 15px;
+        margin-top: 30px;
         height: 600px;
     }
 
@@ -9,7 +9,7 @@
         position: relative;
         overflow: hidden;
         width: 100%;
-        height: calc(700px + 3em);
+        height: calc(600px + 1em);
     }
 
     .slide-open:checked+.slide-item {
@@ -22,7 +22,7 @@
         opacity: 0;
         -webkit-transition: opacity 0.6s ease-out;
         transition: opacity 0.6s ease-out;
-        height: 680px;
+        height: 660px;
     }
 
     .slide-item img {

@@ -70,7 +70,7 @@ small {
 }
 /*TODO seccion cabecera*/
 header {
-    height: 70px;
+    height: 60px;
 }
 /*para cambiar la posicion de los titulos*/
 header h1 {
@@ -125,8 +125,9 @@ header nav ul li a {
 
 /*TODO Seccion features*/
 #features ul {
-    margin: 215px 0;
+    margin: 90px 0;
 }
+
 #features ul li {
     width: 250px;
     padding-top: 370px;
