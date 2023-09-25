@@ -9,7 +9,7 @@
         </li>
     </ul>
 </div>
-
+     
 <div class="row">
     <div class="box col-md-12">
         <div class="box-inner">
@@ -134,7 +134,7 @@
                 <div class="radio">
                     <label>
                         <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                        Option two can be something else and selecting it will deselect option one
+                        Option two can be something else and selecting it will deselect option uno
                     </label>
                 </div>
                 <div class="radio disabled">
