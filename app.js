@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
     
         // Realiza la solicitud POST al backend para guardar el cliente
-        fetch('', {
+        fetch('https://sigbsdeployment.azurewebsites.net/Cliente/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (data.message === 'Registro exitoso') {
                 alert('Registro exitoso. Redirigiendo a la página de inicio de sesión.');
                 // Puedes redirigir al usuario a la página de inicio de sesión aquí
-                window.location.href = 'signin.html'; // Cambia la URL según tu estructura de carpetas
+                window.location.href = 'SignIn.html'; // Cambia la URL según tu estructura de carpetas
             } else {
                 alert('Error en el registro. Por favor, inténtalo de nuevo.');
             }
