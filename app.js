@@ -63,6 +63,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Redirigir a la URL de redirección
                     window.location.href = data.redirectUrl;
                 }
+
+                if (data.cliente) {
+                    alert("jummmm");
+                    const cliente = data.cliente;
+                    alert(cliente.apellido);
+                    document.getElementById('nombre').value = cliente.nombre;
+                    document.getElementById('apellidos').value = cliente.apellido;
+                    document.getElementById('fechaNacimiento').value = cliente.fecha_Nacimiento;
+                    // Llena otros campos del formulario según sea necesario
+                }
+
             } else {
                 resultDiv.textContent = 'Error al iniciar sesión';
             }
