@@ -361,6 +361,18 @@ form.sign-in-form {
     font-size: 0.7rem;
   }
 
+  .btn.btn.transparent-home-rigth{
+    width: 65px;
+    height: 44px;
+    font-size: 2rem;
+  }
+
+  .btn.btn.transparent-home{
+    width: 65px;
+    height: 44px;
+    font-size: 2rem;
+  }
+
   .container:before {
     width: 1500px;
     height: 1500px;
