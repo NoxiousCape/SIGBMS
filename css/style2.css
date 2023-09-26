@@ -226,6 +226,32 @@ form.sign-in-form {
   font-size: 0.8rem;
 }
 
+.btn.btn.transparent-home {
+  position: absolute;
+  left: 10px; /* Ajusta el valor según la posición horizontal deseada */
+  top: 10px;
+  margin: 0;
+  background: none;
+  border: 2px solid #fff;
+  width: 65px;
+  height: 44px;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.btn.btn.transparent-home-rigth {
+  position: absolute;
+  right: 10px; /* Ajusta el valor según la posición horizontal deseada */
+  top: 10px;
+  margin: 0;
+  background: none;
+  border: 2px solid #fff;
+  width: 65px;
+  height: 44px;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
 .right-panel .image,
 .right-panel .content {
   transform: translateX(800px);
@@ -333,6 +359,18 @@ form.sign-in-form {
     width: 110px;
     height: 35px;
     font-size: 0.7rem;
+  }
+
+  .btn.btn.transparent-home-rigth{
+    width: 65px;
+    height: 44px;
+    font-size: 2rem;
+  }
+
+  .btn.btn.transparent-home{
+    width: 65px;
+    height: 44px;
+    font-size: 2rem;
   }
 
   .container:before {
