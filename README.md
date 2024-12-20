@@ -26,7 +26,7 @@ SIGBMS es una solución integral que permite la gestión eficiente de los proces
     
 - Backend:
   
-  -Node.js
+  - Node.js
   
 - Base de Datos:
   
