@@ -19,12 +19,17 @@ SIGBMS es una solución integral que permite la gestión eficiente de los proces
 ## Tecnologías Utilizadas
 
 - Frontend:
+  
   - HTML5
   - CSS3
   - JavaScript
+    
 - Backend:
+  
   -Node.js
+  
 - Base de Datos:
+  
   - MySQL
 
 ## Instalación
