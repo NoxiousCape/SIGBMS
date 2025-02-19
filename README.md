@@ -67,7 +67,7 @@ git push origin feature/nueva-caracteristica
 
 ## Estado del Proyecto
 
-[Especificar estado actual del proyecto: En desarrollo, Terminado, etc.]
+En desarrollo (Alpha)
 
 ## Licencia
 
